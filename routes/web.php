@@ -33,3 +33,5 @@ Route::get('clientes', function () {
 });
 
 Route::get('/clientes', [\App\Http\Controllers\ClientesController::class, 'index']);
+Route::get('/clientes/create', [\App\Http\Controllers\ClientesController::class, 'create']);
+Route::post('/clientes/store', [\App\Http\Controllers\ClientesController::class, 'store']);
