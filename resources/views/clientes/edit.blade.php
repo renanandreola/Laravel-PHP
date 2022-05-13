@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-    <h1>Novo cliente</h1>
+    <h1>Editando cliente: {{ $cliente->nome }}</h1>
 
     @if($errors->any())
         <ul class="alert alert-danger">
@@ -11,69 +11,69 @@
         </ul>
     @endif
 
-    {!! Form::open(['route'=>'clientes.store']) !!}
+    {!! Form::open(['route' => ["clientes.update", "id" => $cliente->id], 'method' => 'put']) !!}
         <div class="form-group">
             {!! Form::label('nome', 'Nome:') !!}
-            {!! Form::text('nome', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('nome', $cliente->nome, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('cpf', 'Cpf:') !!}
-            {!! Form::text('cpf', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('cpf', $cliente->cpf, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('idade', 'Idade:') !!}
-            {!! Form::text('idade', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('idade', $cliente->idade, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('sexo', 'Sexo:') !!}
-            {!! Form::text('sexo', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('sexo', $cliente->sexo, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('telefone', 'Telefone:') !!}
-            {!! Form::text('telefone', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('telefone', $cliente->telefone, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('email', 'Email:') !!}
-            {!! Form::text('email', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('email', $cliente->email, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('cep', 'Cep:') !!}
-            {!! Form::text('cep', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('cep', $cliente->cep, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('rua', 'Rua:') !!}
-            {!! Form::text('rua', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('rua', $cliente->rua, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('bairro', 'Bairro:') !!}
-            {!! Form::text('bairro', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('bairro', $cliente->bairro, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('cidade', 'Cidade:') !!}
-            {!! Form::text('cidade', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('cidade', $cliente->cidade, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('estado', 'Estado:') !!}
-            {!! Form::text('estado', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('estado', $cliente->estado, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('numero', 'Numero:') !!}
-            {!! Form::text('numero', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('numero', $cliente->numero, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
-            {!! Form::submit('Criar cliente', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit('Editar cliente', ['class' => 'btn btn-primary']) !!}
             {!! Form::reset('Limpar', ['class' => 'btn btn-default']) !!}
         </div>
     {!! Form::close() !!}

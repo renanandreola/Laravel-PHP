@@ -25,7 +25,18 @@ class ClienteRequest extends FormRequest
     // validacoes dos campos -> seguir daqui
     {
         return [
-            'nome' => 'required'
+            'nome' => 'required|min:2',
+            'cpf' => 'required|max:14',
+            'idade' => 'required|max:2',
+            'sexo' => 'required|max:1',
+            'telefone' => 'required|max:14',
+            'email' => 'required|max:50',
+            'cep' => 'required|max:9',
+            'rua' => 'required|max:50',
+            'bairro' => 'required|max:50',
+            'cidade' => 'required|max:50',
+            'estado' => 'required|max:2',
+            'numero' => 'required|max:5',
         ];
     }
 }

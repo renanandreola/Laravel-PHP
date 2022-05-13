@@ -2,17 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 // php artisan serve
 // php artisan make:controller AtoresController
 // php artisan make:model Ator -m
@@ -28,10 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('clientes', function () {
-    return  'Página de clientes';
+Route::group(['prefix' => 'clientes', 'where' => ['id' => '[0-9]+']], function () {
+    Route::get('', ['as' => 'clientes', 'uses' => '\App\Http\Controllers\ClientesController@index']);
+    Route::get('create', ['as' => 'clientes.create', 'uses' => '\App\Http\Controllers\ClientesController@create']);
+    Route::get('{id}/destroy', ['as' => 'clientes.destroy', 'uses' => '\App\Http\Controllers\ClientesController@destroy']);
+    Route::get('{id}/edit', ['as' => 'clientes.edit', 'uses' => '\App\Http\Controllers\ClientesController@edit']);
+    Route::put('{id}/update', ['as' => 'clientes.update', 'uses' => '\App\Http\Controllers\ClientesController@update']);
+    Route::post('store', ['as' => 'clientes.store', 'uses' => '\App\Http\Controllers\ClientesController@store']);
 });
 
-Route::get('/clientes', [\App\Http\Controllers\ClientesController::class, 'index']);
-Route::get('/clientes/create', [\App\Http\Controllers\ClientesController::class, 'create']);
-Route::post('/clientes/store', [\App\Http\Controllers\ClientesController::class, 'store']);
+// Route::get('/clientes', [\App\Http\Controllers\ClientesController::class, 'index']);
+// Route::get('/clientes/create', [\App\Http\Controllers\ClientesController::class, 'create']);
+// Route::post('/clientes/store', [\App\Http\Controllers\ClientesController::class, 'store']);
+// Route::get('/clientes/{id}/destroy', [\App\Http\Controllers\ClientesController::class, 'destroy']);
+// Route::get('/clientes/{id}/edit', [\App\Http\Controllers\ClientesController::class, 'edit']);
+// Route::put('/clientes/{id}/update', [\App\Http\Controllers\ClientesController::class, 'update']);
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
