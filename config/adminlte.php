@@ -278,7 +278,7 @@ return [
                     'text'        => 'Listagem',
                     'url'         => 'clientes',
                     // 'icon'        => 'far fa-fw fa-file',
-                    'icon'        => 'fas fa-fw fa-user',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
                     // 'label'       => 4,
                     // 'label_color' => 'success',
                 ],
@@ -291,19 +291,38 @@ return [
         ],
         [
             'text'    => 'Veículos',
-            'icon'    => 'fas fa-fw fa-user',
+            'icon'    => 'fas fa-fw fa-tachometer-alt',
             'submenu' => [
                 [
                     'text'        => 'Listagem',
                     'url'         => 'veiculos',
                     // 'icon'        => 'far fa-fw fa-file',
-                    'icon'        => 'fas fa-fw fa-user',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
                     // 'label'       => 4,
                     // 'label_color' => 'success',
                 ],
                 [
                     'text'        => 'Cadastrar',
                     'url'         => 'veiculos/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Peças',
+            'icon'    => 'fas fa-fw fa-table',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'pecas',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'pecas/create',
                     'icon'        => 'fas fa-fw fa-file',
                 ],
             ],

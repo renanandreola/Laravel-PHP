@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 // php artisan make:controller NacionalidadesController
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcomeCustom');
+});
+
+Route::get('/home', function () {
+    return view('welcomeCustom');
 });
 
 Route::group(['prefix' => 'clientes', 'where' => ['id' => '[0-9]+']], function () {
@@ -33,6 +37,15 @@ Route::group(['prefix' => 'veiculos', 'where' => ['id' => '[0-9]+']], function (
     Route::get('{id}/edit', ['as' => 'veiculos.edit', 'uses' => '\App\Http\Controllers\VeiculosController@edit']);
     Route::put('{id}/update', ['as' => 'veiculos.update', 'uses' => '\App\Http\Controllers\VeiculosController@update']);
     Route::post('store', ['as' => 'veiculos.store', 'uses' => '\App\Http\Controllers\VeiculosController@store']);
+});
+
+Route::group(['prefix' => 'pecas', 'where' => ['id' => '[0-9]+']], function () {
+    Route::get('', ['as' => 'pecas', 'uses' => '\App\Http\Controllers\PecasController@index']);
+    Route::get('create', ['as' => 'pecas.create', 'uses' => '\App\Http\Controllers\PecasController@create']);
+    Route::get('{id}/destroy', ['as' => 'pecas.destroy', 'uses' => '\App\Http\Controllers\PecasController@destroy']);
+    Route::get('{id}/edit', ['as' => 'pecas.edit', 'uses' => '\App\Http\Controllers\PecasController@edit']);
+    Route::put('{id}/update', ['as' => 'pecas.update', 'uses' => '\App\Http\Controllers\PecasController@update']);
+    Route::post('store', ['as' => 'pecas.store', 'uses' => '\App\Http\Controllers\PecasController@store']);
 });
 
 // Route::get('/clientes', [\App\Http\Controllers\ClientesController::class, 'index']);
