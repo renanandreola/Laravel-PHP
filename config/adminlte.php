@@ -289,6 +289,25 @@ return [
                 ],
             ],
         ],
+        [
+            'text'    => 'Veículos',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'veiculos',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-user',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'veiculos/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ],
+        ],
         // ['header' => 'labels'],
         // [
         //     'text'       => 'important',

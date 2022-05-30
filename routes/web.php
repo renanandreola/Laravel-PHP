@@ -26,6 +26,15 @@ Route::group(['prefix' => 'clientes', 'where' => ['id' => '[0-9]+']], function (
     Route::post('store', ['as' => 'clientes.store', 'uses' => '\App\Http\Controllers\ClientesController@store']);
 });
 
+Route::group(['prefix' => 'veiculos', 'where' => ['id' => '[0-9]+']], function () {
+    Route::get('', ['as' => 'veiculos', 'uses' => '\App\Http\Controllers\VeiculosController@index']);
+    Route::get('create', ['as' => 'veiculos.create', 'uses' => '\App\Http\Controllers\VeiculosController@create']);
+    Route::get('{id}/destroy', ['as' => 'veiculos.destroy', 'uses' => '\App\Http\Controllers\VeiculosController@destroy']);
+    Route::get('{id}/edit', ['as' => 'veiculos.edit', 'uses' => '\App\Http\Controllers\VeiculosController@edit']);
+    Route::put('{id}/update', ['as' => 'veiculos.update', 'uses' => '\App\Http\Controllers\VeiculosController@update']);
+    Route::post('store', ['as' => 'veiculos.store', 'uses' => '\App\Http\Controllers\VeiculosController@store']);
+});
+
 // Route::get('/clientes', [\App\Http\Controllers\ClientesController::class, 'index']);
 // Route::get('/clientes/create', [\App\Http\Controllers\ClientesController::class, 'create']);
 // Route::post('/clientes/store', [\App\Http\Controllers\ClientesController::class, 'store']);
