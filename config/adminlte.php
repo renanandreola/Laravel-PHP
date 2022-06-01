@@ -290,6 +290,25 @@ return [
             ],
         ],
         [
+            'text'    => 'Funcionários',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'funcionarios',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'funcionarios/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ],
+        ],
+        [
             'text'    => 'Veículos',
             'icon'    => 'fas fa-fw fa-tachometer-alt',
             'submenu' => [

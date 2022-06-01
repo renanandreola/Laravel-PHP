@@ -48,6 +48,15 @@ Route::group(['prefix' => 'pecas', 'where' => ['id' => '[0-9]+']], function () {
     Route::post('store', ['as' => 'pecas.store', 'uses' => '\App\Http\Controllers\PecasController@store']);
 });
 
+Route::group(['prefix' => 'funcionarios', 'where' => ['id' => '[0-9]+']], function () {
+    Route::get('', ['as' => 'funcionarios', 'uses' => '\App\Http\Controllers\FuncionariosController@index']);
+    Route::get('create', ['as' => 'funcionarios.create', 'uses' => '\App\Http\Controllers\FuncionariosController@create']);
+    Route::get('{id}/destroy', ['as' => 'funcionarios.destroy', 'uses' => '\App\Http\Controllers\FuncionariosController@destroy']);
+    Route::get('{id}/edit', ['as' => 'funcionarios.edit', 'uses' => '\App\Http\Controllers\FuncionariosController@edit']);
+    Route::put('{id}/update', ['as' => 'funcionarios.update', 'uses' => '\App\Http\Controllers\FuncionariosController@update']);
+    Route::post('store', ['as' => 'funcionarios.store', 'uses' => '\App\Http\Controllers\FuncionariosController@store']);
+});
+
 // Route::get('/clientes', [\App\Http\Controllers\ClientesController::class, 'index']);
 // Route::get('/clientes/create', [\App\Http\Controllers\ClientesController::class, 'create']);
 // Route::post('/clientes/store', [\App\Http\Controllers\ClientesController::class, 'store']);

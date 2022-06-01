@@ -24,7 +24,13 @@ class VeiculoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'cliente_id' => '', 
+            'placa' => 'required|min:2|max:7', 
+            'cor' => 'required|min:2|max:30', 
+            'marca' => 'required|min:2|max:30', 
+            'modelo' => 'required|min:2|max:30', 
+            'motorizacao'=> 'required|min:2|max:30', 
+            'ano' => 'required|min:4|max:4'
         ];
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <h1>Veículos</h1>
+    <h1>Peças</h1>
     <table class="table table-stripe table-bordered table-hover">
         <thead>
             <th>Nome</th>
