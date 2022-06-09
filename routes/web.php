@@ -3,15 +3,30 @@
 use Illuminate\Support\Facades\Route;
 
 // php artisan serve
+
 // php artisan make:controller AtoresController
+
 // php artisan make:model Ator -m
+
 // php artisan tinker
+
 // composer require laravel/ui
+
 // php artisan ui vue --auth
+
 // composer require jeroennoten/laravel-adminlte
+
 // php artisan adminlte:install
+
 // php artisan make:model Nacionalidade -m
+
 // php artisan make:controller NacionalidadesController
+
+// php artisan make:migration RemoveNacionalidadeToAtores
+
+// php artisan make:migration AddNacionalidadeIdToAtores
+
+// php artisan optimize: caso criar as rotas e não funcionar
 
 Route::get('/', function () {
     return view('welcomeCustom');
@@ -56,6 +71,16 @@ Route::group(['prefix' => 'funcionarios', 'where' => ['id' => '[0-9]+']], functi
     Route::put('{id}/update', ['as' => 'funcionarios.update', 'uses' => '\App\Http\Controllers\FuncionariosController@update']);
     Route::post('store', ['as' => 'funcionarios.store', 'uses' => '\App\Http\Controllers\FuncionariosController@store']);
 });
+
+Route::group(['prefix' => 'servicos', 'where' => ['id' => '[0-9]+']], function () {
+    Route::get('', ['as' => 'servicos', 'uses' => '\App\Http\Controllers\ServicosController@index']);
+    Route::get('create', ['as' => 'servicos.create', 'uses' => '\App\Http\Controllers\ServicosController@create']);
+    Route::get('{id}/destroy', ['as' => 'servicos.destroy', 'uses' => '\App\Http\Controllers\ServicosController@destroy']);
+    Route::get('{id}/edit', ['as' => 'servicos.edit', 'uses' => '\App\Http\Controllers\ServicosController@edit']);
+    Route::put('{id}/update', ['as' => 'servicos.update', 'uses' => '\App\Http\Controllers\ServicosController@update']);
+    Route::post('store', ['as' => 'servicos.store', 'uses' => '\App\Http\Controllers\ServicosController@store']);
+});
+
 
 // Route::get('/clientes', [\App\Http\Controllers\ClientesController::class, 'index']);
 // Route::get('/clientes/create', [\App\Http\Controllers\ClientesController::class, 'create']);

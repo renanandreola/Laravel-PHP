@@ -346,6 +346,25 @@ return [
                 ],
             ],
         ],
+        [
+            'text'    => 'Ordens de Serviço',
+            'icon'    => 'fas fa-fw fa-edit',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'servicos',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'servicos/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ],
+        ],
         // ['header' => 'labels'],
         // [
         //     'text'       => 'important',
