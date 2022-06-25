@@ -365,6 +365,26 @@ return [
                 ],
             ],
         ],
+
+        [
+            'text'    => 'Orçamento',
+            'icon'    => 'fas fa-fw fa-flag',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'orcamentos',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'orcamentos/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ],
+        ],
         // ['header' => 'labels'],
         // [
         //     'text'       => 'important',

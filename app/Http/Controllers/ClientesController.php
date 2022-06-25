@@ -9,9 +9,15 @@ use App\Http\Requests\ClienteRequest;
 class ClientesController extends Controller
 {
     public function index() {
-        $clientes = Cliente::orderBy('nome')->paginate(5);
-        // dd($clientes);
-        return view('clientes.index', ['clientes'=>$clientes]);
+        // $filtragem = $filtro->get('desc_filtro');
+
+        // if ($filtragem == null) {
+            $clientes = Cliente::orderBy('nome')->paginate(5);
+            return view('clientes.index', ['clientes'=>$clientes]);
+        // } else {
+            // $clientes = Cliente::where('nome', 'like', '%'+$filtragem+'%')->orderBy("nome")->paginate(5)->setpath('clientes?desc_filtro='+$filtragem);
+
+        // }
     }
 
     public function create() {

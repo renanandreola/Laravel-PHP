@@ -19,4 +19,8 @@ class Veiculo extends Model
         return $this->belongsTo("App\Models\Cliente");
     }
 
+    public function orcamentos() {
+        return $this->hasMany("App\Models\Orcamentos");
+    }
+
 }

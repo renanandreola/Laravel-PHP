@@ -22,11 +22,15 @@ use Illuminate\Support\Facades\Route;
 
 // php artisan make:controller NacionalidadesController
 
+// php artisan make:request AtorRequest
+
 // php artisan make:migration RemoveNacionalidadeToAtores
 
 // php artisan make:migration AddNacionalidadeIdToAtores
 
 // php artisan optimize: caso criar as rotas e não funcionar
+
+// php artisan migrate
 
 Route::get('/', function () {
     return view('welcomeCustom');
@@ -37,7 +41,7 @@ Route::get('/home', function () {
 });
 
 Route::group(['prefix' => 'clientes', 'where' => ['id' => '[0-9]+']], function () {
-    Route::get('', ['as' => 'clientes', 'uses' => '\App\Http\Controllers\ClientesController@index']);
+    Route::any('', ['as' => 'clientes', 'uses' => '\App\Http\Controllers\ClientesController@index']);
     Route::get('create', ['as' => 'clientes.create', 'uses' => '\App\Http\Controllers\ClientesController@create']);
     Route::get('{id}/destroy', ['as' => 'clientes.destroy', 'uses' => '\App\Http\Controllers\ClientesController@destroy']);
     Route::get('{id}/edit', ['as' => 'clientes.edit', 'uses' => '\App\Http\Controllers\ClientesController@edit']);
@@ -79,6 +83,15 @@ Route::group(['prefix' => 'servicos', 'where' => ['id' => '[0-9]+']], function (
     Route::get('{id}/edit', ['as' => 'servicos.edit', 'uses' => '\App\Http\Controllers\ServicosController@edit']);
     Route::put('{id}/update', ['as' => 'servicos.update', 'uses' => '\App\Http\Controllers\ServicosController@update']);
     Route::post('store', ['as' => 'servicos.store', 'uses' => '\App\Http\Controllers\ServicosController@store']);
+});
+
+Route::group(['prefix' => 'orcamentos', 'where' => ['id' => '[0-9]+']], function () {
+    Route::get('', ['as' => 'orcamentos', 'uses' => '\App\Http\Controllers\OrcamentosController@index']);
+    Route::get('create', ['as' => 'orcamentos.create', 'uses' => '\App\Http\Controllers\OrcamentosController@create']);
+    Route::get('{id}/destroy', ['as' => 'orcamentos.destroy', 'uses' => '\App\Http\Controllers\OrcamentosController@destroy']);
+    Route::get('{id}/edit', ['as' => 'orcamentos.edit', 'uses' => '\App\Http\Controllers\OrcamentosController@edit']);
+    Route::put('{id}/update', ['as' => 'orcamentos.update', 'uses' => '\App\Http\Controllers\OrcamentosController@update']);
+    Route::post('store', ['as' => 'orcamentos.store', 'uses' => '\App\Http\Controllers\OrcamentosController@store']);
 });
 
 

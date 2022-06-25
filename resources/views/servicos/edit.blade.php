@@ -18,15 +18,31 @@
             {!! Form::text('numero',  $servico->numero, ['class'=>'form-control', 'required']) !!}
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             {!! Form::label('veiculo', 'Veículo:') !!}
-            {!! Form::text('veiculo',  $servico->veiculo, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('veiculo',  $servico->veiculo->placa, ['class'=>'form-control', 'required']) !!}
+        </div> --}}
+
+        <div class="form-group">
+            {!! Form::label('placa', 'Veículo:') !!}
+            {!! Form::select('placa',
+                            \App\Models\Veiculo::orderBy('placa')->pluck('placa', 'id')->toArray(),
+                            $servico->veiculo_id, ['class' => 'form-control', 'required']
+            ) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('cliente', 'Cliente:') !!}
-            {!! Form::text('cliente',  $servico->cliente, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('cliente',  $servico->veiculo->cliente->nome, ['class'=>'form-control', 'required']) !!}
         </div>
+{{-- 
+        <div class="form-group">
+            {!! Form::label('cliente', 'Cliente:') !!}
+            {!! Form::select('cliente',
+                            \App\Models\Veiculo::orderBy('cliente->nome')->pluck('cliente->nome', 'id')->toArray(),
+                            $servico->veiculo->cliente->nome, ['class' => 'form-control', 'required']
+            ) !!}
+        </div> --}}
 
         <div class="form-group">
             {!! Form::label('data', 'Data:') !!}
@@ -35,7 +51,7 @@
 
         <div class="form-group">
             {!! Form::label('observacoes', 'Observações:') !!}
-            {!! Form::text('observacoes',  $servico->observacoes, ['class'=>'form-control', 'required']) !!}
+            {!! Form::textarea('observacoes',  $servico->observacoes, ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
