@@ -24,10 +24,10 @@ class OrcamentoRequest extends FormRequest
     public function rules()
     {
         return [
-            'numero' => '',
+            'numero' => 'required|min:2|max:50',
             'veiculo_id' => '',
             'data' => 'date',
-            'valor' => ''
+            'valor' => 'required'
         ];
     }
 }

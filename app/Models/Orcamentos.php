@@ -9,6 +9,8 @@ class Orcamentos extends Model
 {
     // use HasFactory;
     protected $table = "orcamentos";
+
+    // campos da tabela
     protected $fillable = ['numero', 'veiculo_id', 'data', 'valor'];
     
     public function veiculo() {

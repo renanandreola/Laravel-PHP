@@ -9,6 +9,8 @@ class OrcamentoPecas extends Model
 {
     // use HasFactory;
     protected $table = "orcamento_pecas";
+
+    // campos da tabela
     protected $fillable = ['orcamento_id', 'peca_id'];
 
     public function peca() {

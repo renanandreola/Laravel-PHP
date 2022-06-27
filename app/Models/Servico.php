@@ -9,6 +9,8 @@ class Servico extends Model
 {
     // use HasFactory;
     protected $table = "servicos";
+    
+    // campos da tabela
     protected $fillable = ['numero', 'veiculo_id', 'data', 'observacoes'];
     
     public function veiculo() {
