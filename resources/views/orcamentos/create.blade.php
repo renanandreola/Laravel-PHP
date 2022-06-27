@@ -45,7 +45,6 @@
         </div>
         
         <hr>
-
         <h4>Peças</h4>
         <div class="input_fields_wrap"></div>
         <br>

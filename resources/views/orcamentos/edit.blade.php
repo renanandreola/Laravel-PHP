@@ -42,9 +42,23 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('itens', 'Itens:') !!}
-            {!! Form::text('itens',  $orcamento->itens, ['class'=>'form-control', 'required']) !!}
+            {!! Form::label('nome', 'Itens:') !!}
+            <td>
+                @foreach($orcamento->pecas as $p)
+                    <li>{{ $p->peca->nome }}</li>
+                @endforeach
+            </td>
         </div>
+
+        {{-- <hr>
+        <h4>Peças</h4>
+        <div class="input_fields_wrap"></div>
+        <br>
+
+        <button style="float: right;" class="add_field_button btn btn-default">Adicionar peça</button>
+        
+        <br>
+        <hr> --}}
 
         <div class="form-group">
             {!! Form::label('valor', 'Valor:') !!}
@@ -57,3 +71,25 @@
         </div>
     {!! Form::close() !!}
 @stop
+
+{{-- @section('js')
+    <script>
+        $(document).ready(function() {
+            var wrapper = $(".input_fields_wrap");
+            var add_button = $(".add_field_button");
+
+            var x = 0;
+
+            $(add_button).click(function(e) {
+                x++;
+                var newField = '<div><div style="width: 94%; float: left;" id="peca">{!! Form::select("pecas[]", \App\Models\Peca::orderBy("nome")->pluck("nome", "id")->toArray(), null, ["class"=>"form-control", "required", "placeholder"=>"Selecione uma peça"]) !!}</div><button type="button" class="remove_field btn btn-danger btn-circle"><i class="fa fa-times"></button></div>';
+                $(wrapper).append(newField);
+            });
+            $(wrapper).on("click", ".remove_field", function(e) {
+               e.preventDefault();
+               $(this).parent('div').remove();
+               x--; 
+            });
+        });
+    </script>
+@stop --}}

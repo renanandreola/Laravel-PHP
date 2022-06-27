@@ -17,6 +17,7 @@ class Orcamentos extends Model
     }
 
     public function pecas() {
-        return $this->hasMany("App\Models\OrcamentoPecas");
+        // O segundo parâmetro é para forçar a FK - estava pegando orcamentos_id
+        return $this->hasMany("App\Models\OrcamentoPecas", "orcamento_id");
     }
 }

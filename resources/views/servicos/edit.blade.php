@@ -24,8 +24,8 @@
         </div> --}}
 
         <div class="form-group">
-            {!! Form::label('placa', 'Veículo:') !!}
-            {!! Form::select('placa',
+            {!! Form::label('veiculo_id', 'Veículo:') !!}
+            {!! Form::select('veiculo_id',
                             \App\Models\Veiculo::orderBy('placa')->pluck('placa', 'id')->toArray(),
                             $servico->veiculo_id, ['class' => 'form-control', 'required']
             ) !!}

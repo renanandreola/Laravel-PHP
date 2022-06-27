@@ -12,6 +12,9 @@
                 cancelButtonText: 'Cancelar!', closeOnConfirm: false,
             }).then(function(isConfirm) {
                 if (isConfirm.value) {
+                    console.log("table-delete: ", @yield('table-delete'));
+                    console.log("id: ", id);
+                    
                     $.get('/' + @yield('table-delete') + '/' + id + '/destroy', function(data) {
                         swal.fire(
                             'Deletado!',

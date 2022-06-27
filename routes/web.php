@@ -2,35 +2,39 @@
 
 use Illuminate\Support\Facades\Route;
 
-// php artisan serve
+// START COMMAND LINE CODES
 
-// php artisan make:controller AtoresController
+// php artisan serve - inicializa o servidor
 
-// php artisan make:model Ator -m
+// php artisan make:controller AtoresController - cria o Controller
 
-// php artisan tinker
+// php artisan make:model Ator -m - cria o Model
 
-// composer require laravel/ui
+// php artisan tinker - possibilita cadastros via Command Line
 
-// php artisan ui vue --auth
+// composer require laravel/ui - instalação de pacote
 
-// composer require jeroennoten/laravel-adminlte
+// php artisan ui vue --auth - configuração de autorização
 
-// php artisan adminlte:install
+// composer require jeroennoten/laravel-adminlte - instala o AdminLTE
 
-// php artisan make:model Nacionalidade -m
+// php artisan adminlte:install - instala o AdminLTE
 
-// php artisan make:controller NacionalidadesController
+// php artisan make:model Nacionalidade -m - cria o Model
 
-// php artisan make:request AtorRequest
+// php artisan make:controller NacionalidadesController - cria Controller
 
-// php artisan make:migration RemoveNacionalidadeToAtores
+// php artisan make:request AtorRequest - cria request
 
-// php artisan make:migration AddNacionalidadeIdToAtores
+// php artisan make:migration RemoveNacionalidadeToAtores - remove campo em uma tabela
 
-// php artisan optimize: caso criar as rotas e não funcionar
+// php artisan make:migration AddNacionalidadeIdToAtores - adiciona novo campo em uma tabela
 
-// php artisan migrate
+// php artisan optimize - caso criar as rotas e não funcionar
+
+// php artisan migrate - realizar migrações
+
+// END COMMAND LINE CODES
 
 Route::get('/', function () {
     return view('welcomeCustom');

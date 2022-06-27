@@ -20,15 +20,15 @@
                     <td>{{ $orcamento->veiculo->placa }}</td>
                     <td>{{ $orcamento->veiculo->cliente->nome }}</td>
                     <td>{{ Carbon\Carbon::parse($orcamento->data)->format('d/m/Y') }}</td>
-                    {{-- <td>{{ $orcamento->data }}</td> --}}
+                    {{-- <td>{{ $orcamento }}</td> --}}
                     <td>
-                        @foreach($orcamento->pecas as $a)
-                            <li>{{ $a->peca->nome }}</li>
+                        @foreach($orcamento->pecas as $p)
+                            <li>{{ $p->peca->nome }}</li>
                         @endforeach
                     </td>
-                    <td>{{ $orcamento->valor }}</td>
+                    <td>R${{ $orcamento->valor }},00</td>
                     <td>
-                        {{-- <a href="{{ route('orcamentos.edit', ['id' => $orcamento->id]) }}" class="btn-sm btn-success">Editar</a> --}}
+                        <a href="{{ route('orcamentos.edit', ['id' => $orcamento->id]) }}" class="btn-sm btn-success">Editar</a>
                         <a href="#" onclick="return confirmaExclusao({{$orcamento->id}});" class="btn-sm btn-danger">Remover</a>
                     </td>
                 </tr>
